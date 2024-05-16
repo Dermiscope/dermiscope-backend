@@ -15,13 +15,20 @@ module.exports = {
     prefix: '/v1',
   },
   database: {
-    connection: process.env.DB_CONNECTION,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
     name: process.env.DB_NAME,
+    hostname: process.env.DB_HOSTNAME,
+    dialect: process.env.DB_DIALECT,
+  },
+  google_auth: {
+    clientID: process.env.GOOGLE_CLIENT_ID || '',
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
   },
   env: process.env.NODE_ENV,
   port: process.env.PORT || 5000,
   secret: {
     jwt: process.env.JWT_SECRET || 'JWT_SECRET',
-    jwtExpiresIn: process.env.JWT_EXPIRES_IN || '1d',
+    jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
   },
 };

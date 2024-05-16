@@ -5,6 +5,7 @@ const { logger } = require('./core/logger');
 // App server listen
 const app = server.listen(port, (err) => {
   if (err) {
+    logger.error(err);
     process.exit(1);
   } else {
     logger.info(`Server Running On Port ${port}`);

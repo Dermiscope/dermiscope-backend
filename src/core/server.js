@@ -25,7 +25,11 @@ app.use(express.json());
 // Needed to use multipart/form-data for file uploads
 app.use(express.urlencoded({ extended: false }));
 
+// Handle log http
 app.use(logRequests);
+
+// Init passport js
+// app.use(passport.initialize())
 
 // API routes
 app.use(`${config.api.prefix}`, routes());
@@ -43,7 +47,6 @@ app.use((error, request, response, next) => {
   const error_data = {
     statusCode: error.status || 500,
     error: error.code || 'UNKNOWN_ERROR',
-    description: error.description || 'Unknown error',
     message: error.message || 'An error has occurred',
     // Handle JOI validation error
     ...(error.validationErrors && {

@@ -38,7 +38,7 @@ const errorTypes = {
     code: 'EMPTY_BODY_ERROR',
   },
   VALIDATION: {
-    description: 'Invalid request',
+    description: 'Validation error',
     status: 400,
     code: 'VALIDATION_ERROR',
   },
@@ -182,6 +182,20 @@ const errorResponder = (errorType, message, validationErrors = null) => {
   return error;
 };
 
+const sequelizeValidationError = (error) => {
+  const validationErrors = error.errors.map((err) => ({
+    source: 'body',
+    keys: [err.path],
+    message: [err.message],
+  }));
+
+  return {
+    errorType: errorTypes.VALIDATION,
+    message: errorTypes.VALIDATION.description,
+    validationErrors,
+  };
+};
+
 const errorHandler = (error, request, response, next) => {
   // Handle Joi validation error
   if (isCelebrateError(error)) {
@@ -200,7 +214,7 @@ const errorHandler = (error, request, response, next) => {
     return next(
       errorResponder(
         errorTypes.VALIDATION,
-        'Validation error',
+        errorTypes.VALIDATION.description,
         validationErrors
       )
     );
@@ -212,5 +226,6 @@ const errorHandler = (error, request, response, next) => {
 module.exports = {
   errorTypes,
   errorResponder,
+  sequelizeValidationError,
   errorHandler,
 };
