@@ -73,11 +73,11 @@ async function store(request, response, next) {
  */
 async function update(request, response, next) {
   try {
-    const [result] = await UserService.update(request.params.id, request.body);
-    const newData = result !== 0 ? request.body : null;
+    const result = await UserService.update(request.params.id, request.body);
+    // const newData = result !== 0 ? request.body : null;
     return response.status(200).json({
       status: 'OK',
-      data: newData,
+      data: result,
     });
   } catch (error) {
     next(
