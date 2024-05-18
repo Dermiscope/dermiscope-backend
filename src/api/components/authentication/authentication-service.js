@@ -23,7 +23,7 @@ async function AuthenticationGoogle({ token }) {
       image: payload.picture,
       time: Date.now(),
     };
-    await UserService.storeOrUpdateByGoogleID(payload.sub, userPayload);
+    await UserService.storeOrUpdate(payload.sub, userPayload);
     const authToken = generateAccessToken(userPayload);
     return {
       token: authToken,
