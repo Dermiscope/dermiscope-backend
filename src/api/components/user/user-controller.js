@@ -29,7 +29,7 @@ async function getAll(request, response, next) {
  */
 async function getOne(request, response, next) {
   try {
-    const result = await UserService.getOne(request.params.id);
+    const result = await UserService.getOne({ id: request.params.id });
     return response.status(200).json({
       status: 'OK',
       data: result,

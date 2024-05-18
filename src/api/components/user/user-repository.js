@@ -9,7 +9,7 @@ async function getAll() {
 
 /**
  * Handle Get One User By Option
- * @param {string} id User ID
+ * @param {object} option Option
  * @returns
  */
 async function getOne(option) {
@@ -27,11 +27,11 @@ async function store(body) {
 
 /**
  * Handle Update User By Option
+ * @param {object} option Option
  * @param {string} id User ID
- * @param {object} body Body
  * @returns
  */
-async function update(body, option) {
+async function update(option, body) {
   return await users.update(body, { where: option });
 }
 

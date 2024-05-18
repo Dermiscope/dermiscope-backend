@@ -53,7 +53,7 @@ async function store(body) {
  */
 async function update(id, body) {
   try {
-    return await UserRepository.update({ id }, body);
+    return await UserRepository.update({ id: id }, body);
   } catch (error) {
     if (error instanceof Sequelize.ValidationError) {
       throw sequelizeValidationError(error);
