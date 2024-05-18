@@ -8,21 +8,12 @@ async function getAll() {
 }
 
 /**
- * Handle Get User By ID
+ * Handle Get One User By Option
  * @param {string} id User ID
  * @returns
  */
-async function getById(id) {
-  return await users.findOne({ where: { id } });
-}
-
-/**
- * Handle Get User By Google ID
- * @param {string} id Google ID
- * @returns
- */
-async function getByIdGoogle(id) {
-  return await users.findOne({ where: { id_google: id } });
+async function getOne(option) {
+  return await users.findOne({ where: option });
 }
 
 /**
@@ -35,27 +26,13 @@ async function store(body) {
 }
 
 /**
- * Handle Update User
+ * Handle Update User By Option
  * @param {string} id User ID
  * @param {object} body Body
  * @returns
  */
-async function update(id, body) {
-  return await users.update(body, { where: { id } });
-}
-
-/**
- * Handle Update Last Login
- * @param {string} id User ID
- * @returns
- */
-async function updateLastLogin(id) {
-  return await users.update(
-    {
-      lastLoginAt: new Date(),
-    },
-    { where: { id } }
-  );
+async function update(body, option) {
+  return await users.update(body, { where: option });
 }
 
 /**
@@ -69,10 +46,8 @@ async function deleteUser(id) {
 
 module.exports = {
   getAll,
-  getById,
-  getByIdGoogle,
+  getOne,
   store,
   update,
-  updateLastLogin,
   deleteUser,
 };

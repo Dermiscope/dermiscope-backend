@@ -16,26 +16,13 @@ async function getAll() {
 }
 
 /**
- * Handle Get User By ID
+ * Handle Get User By Option
  * @param {string} id User ID
  * @returns {}
  */
-async function getById(id) {
+async function getOne(option) {
   try {
-    return await UserRepository.getById(id);
-  } catch (error) {
-    throw error;
-  }
-}
-
-/**
- * Handle Get User By Google ID
- * @param {string} id Google ID
- * @returns {}
- */
-async function getByIdGoogle(id) {
-  try {
-    return await UserRepository.getByIdGoogle(id);
+    return await UserRepository.getOne(option);
   } catch (error) {
     throw error;
   }
@@ -66,7 +53,43 @@ async function store(body) {
  */
 async function update(id, body) {
   try {
-    return await UserRepository.update(id, body);
+    return await UserRepository.update({ id }, body);
+  } catch (error) {
+    if (error instanceof Sequelize.ValidationError) {
+      throw sequelizeValidationError(error);
+    }
+    throw error;
+  }
+}
+
+/**
+ * Hanlde Store Or Update User By Google ID
+ * @param {string} id Google ID
+ * @param {object} body Body
+ * @returns {}
+ */
+async function storeOrUpdate(id, body) {
+  try {
+    const user = await getOne({ id_google: id });
+    if (user) {
+      const data = {
+        fullname: body.fullname,
+        image: body.image,
+        lastLoginAt: body.time,
+      };
+      await UserRepository.update({ id_google: id }, data);
+    } else {
+      const id = GenerateID();
+      const data = {
+        id,
+        id_google: body.id_google,
+        fullname: body.fullname,
+        email: body.email,
+        image: body.image,
+      };
+      await store(data);
+    }
+    return true;
   } catch (error) {
     if (error instanceof Sequelize.ValidationError) {
       throw sequelizeValidationError(error);
@@ -90,9 +113,9 @@ async function deleteUser(id) {
 
 module.exports = {
   getAll,
-  getById,
-  getByIdGoogle,
+  getOne,
   store,
   update,
+  storeOrUpdate,
   deleteUser,
 };

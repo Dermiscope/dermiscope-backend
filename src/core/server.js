@@ -1,6 +1,5 @@
 const cors = require('cors');
 const express = require('express');
-const passport = require('passport');
 
 const config = require('./config');
 const { logRequests } = require('./logger');
@@ -16,9 +15,6 @@ app.enable('trust proxy');
 // Enable cross origin resource sharing to all origins by default
 app.use(cors());
 
-// Enable passport for API authorization
-app.use(passport.initialize());
-
 // Middleware that transforms the raw string of req.body into JSON
 app.use(express.json());
 
@@ -28,9 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 // Handle log http
 app.use(logRequests);
 
-// Init passport js
-// app.use(passport.initialize())
-
 // API routes
 app.use(`${config.api.prefix}`, routes());
 
@@ -39,7 +32,7 @@ app.use((request, response, next) =>
   next(errorResponder(errorTypes.ROUTE_NOT_FOUND, 'Route not found'))
 );
 
-// Handle library error, JOI, Sequelize, etc.
+// Handle library error JOI.
 app.use(errorHandler);
 
 // Send error response to the caller

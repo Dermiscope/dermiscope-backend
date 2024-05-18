@@ -77,6 +77,11 @@ const errorTypes = {
     status: 419,
     code: 'TOKEN_EXPIRED_ERROR',
   },
+  UNAUTHORIZED: {
+    description: 'Unauthorized',
+    status: 401,
+    code: 'UNAUTHORIZED',
+  },
   SESSION_EXPIRED: {
     description: 'Session (refresh token) expired',
     status: 419,

@@ -21,15 +21,15 @@ async function getAll(request, response, next) {
 }
 
 /**
- * Handle Get User By ID
+ * Handle Get One User
  * @param {object} request Request
  * @param {object} response Response
  * @param {object} next Next
  * @returns {object}
  */
-async function getById(request, response, next) {
+async function getOne(request, response, next) {
   try {
-    const result = await UserService.getById(request.params.id);
+    const result = await UserService.getOne(request.params.id);
     return response.status(200).json({
       status: 'OK',
       data: result,
@@ -118,7 +118,7 @@ async function deleteUser(request, response, next) {
 
 module.exports = {
   getAll,
-  getById,
+  getOne,
   store,
   update,
   deleteUser,
