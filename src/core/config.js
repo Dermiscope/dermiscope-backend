@@ -22,8 +22,13 @@ module.exports = {
     dialect: process.env.DB_DIALECT,
   },
   google_auth: {
+    projectID: process.env.GOOGLE_PROJECT_ID || '',
     clientID: process.env.GOOGLE_CLIENT_ID || '',
     clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+    bucketName: process.env.GOOGLE_BUCKET_NAME || '',
+    bucketClientEmail: process.env.GOOGLE_BUCKET_CLIENT_EMAIL || '',
+    bucketPrivateKey:
+      process.env.GOOGLE_BUCKET_PRIVATE_KEY.replace(/\\n/g, '\n') || '',
   },
   env: process.env.NODE_ENV,
   port: process.env.PORT || 5000,
