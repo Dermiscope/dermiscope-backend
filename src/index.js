@@ -1,4 +1,4 @@
-const { port } = require('./core/config');
+const { port, env } = require('./core/config');
 const server = require('./core/server');
 const { logger } = require('./core/logger');
 
@@ -8,7 +8,9 @@ const app = server.listen(port, (err) => {
     logger.error(err);
     process.exit(1);
   } else {
-    logger.info(`Server Running On Port ${port}`);
+    logger.info(
+      `Server Running As ${env[0].toUpperCase() + env.slice(1).toLowerCase()} On Port ${port}`
+    );
   }
 });
 

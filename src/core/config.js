@@ -1,8 +1,5 @@
 const dotenv = require('dotenv');
 
-// Set the NODE_ENV to 'development' by default.
-process.env.NODE_ENV = (process.env.NODE_ENV || 'development').toLowerCase();
-
 // Environment variables should be saved in a file named `.env` in the `./config` directory.
 // See `.env.example` for example.
 const envFound = dotenv.config({ path: '.env' });
@@ -10,16 +7,28 @@ if (envFound.error) {
   throw new Error("Couldn't find .env file");
 }
 
+// Set the NODE_ENV to 'development' by default.
+process.env.NODE_ENV = (process.env.NODE_ENV || 'development').toLowerCase();
+
 module.exports = {
   api: {
     prefix: '/v1',
   },
   database: {
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    name: process.env.DB_NAME,
-    hostname: process.env.DB_HOSTNAME,
-    dialect: process.env.DB_DIALECT,
+    development: {
+      username: process.env.DB_USERNAME_DEVELOPMENT,
+      password: process.env.DB_PASSWORD_DEVELOPMENT,
+      name: process.env.DB_NAME_DEVELOPMENT,
+      hostname: process.env.DB_HOSTNAME_DEVELOPMENT,
+      dialect: process.env.DB_DIALECT_DEVELOPMENT,
+    },
+    production: {
+      username: process.env.DB_USERNAME_PRODUCTION,
+      password: process.env.DB_PASSWORD_PRODUCTION,
+      name: process.env.DB_NAME_PRODUCTION,
+      hostname: process.env.DB_HOSTNAME_PRODUCTION,
+      dialect: process.env.DB_DIALECT_PRODUCTION,
+    },
   },
   google_auth: {
     projectID: process.env.GOOGLE_PROJECT_ID || '',
