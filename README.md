@@ -38,4 +38,4 @@ Once the identification is done, Dermiscope not only provides a diagnosis but al
 2. Navigate to the directory where you want to clone the project.
 3. Run the following command to clone the project git
    ```bash
-   git clone https://github.com/dermiscope.git
+   git clone https://github.com/Dermiscope/dermiscope-backend.git
