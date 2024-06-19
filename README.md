@@ -67,6 +67,12 @@ dermiscope-backend/
 
 ## Contribution
 
+### Rules and guidelines for contributing to the project:
+1. Fork the repository and create new branches for features or improvements.
+2. Make changes and commit with a clear message.
+3. Push the changes to the new branch in your fork.
+4. Create a pull request to the main repository and describe the changes you made.
+
 ## License
 
 ## Contact
