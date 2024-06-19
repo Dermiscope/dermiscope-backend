@@ -50,13 +50,18 @@ Once the identification is done, Dermiscope not only provides a diagnosis but al
 
 ## Project Architecture
 ```bash
-dermiscope/
-├── backend/
-│   ├── app/
-│   ├── models/
-│   ├── routes/
-│   └── tests/
-└── docs/
+dermiscope-backend/
+├── src/
+│   ├── api
+│   ├──── components/
+│   ├──── middlewares/
+│   └── index.js
+├── .eslintrc.js
+├── .gitignore
+├── .prettierrc
+├── .sequelizerc
+├── package.json
+└── yarn.lock
 ```
 ![image](https://github.com/Dermiscope/dermiscope-backend/assets/135413797/2563efda-791e-4eb0-bdfc-31ba63e4cd6e)
 
