@@ -73,8 +73,6 @@ dermiscope-backend/
 3. Push the changes to the new branch in your fork.
 4. Create a pull request to the main repository and describe the changes you made.
 
-## License
-
 
 ## Contact
 For questions or support, you can contact us via email: support@dermiscope.site
