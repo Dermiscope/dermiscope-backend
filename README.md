@@ -16,7 +16,6 @@ Once the identification is done, Dermiscope not only provides a diagnosis but al
 - Cloud Computing
 - Mobile Development
 - Contribution
-- License
 - Contact
 - FAQ
 
