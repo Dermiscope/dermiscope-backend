@@ -77,7 +77,7 @@ dermiscope-backend/
 
 
 ## Contact
-
+For questions or support, you can contact us via email: support@dermiscope.site
 
 ## FAQ
 ### List of frequently asked questions:
