@@ -9,7 +9,7 @@ Once the identification is done, Dermiscope not only provides a diagnosis but al
   - Prerequisites
   - Installation Instructions
 - Usage
-- [Project Architecture
+- Project Architecture
   - Directory Structure
   - Architecture Diagram
 - Machine Learning
@@ -33,9 +33,41 @@ Once the identification is done, Dermiscope not only provides a diagnosis but al
 - Google Cloud Storage
 - Libraries and frameworks used: TensorFlow, Express JS and others
 
-### Instruksi Instalasi
+### Installation Instruction
 1. Open a terminal or command prompt on your computer.
 2. Navigate to the directory where you want to clone the project.
 3. Run the following command to clone the project git
    ```bash
    git clone https://github.com/Dermiscope/dermiscope-backend.git
+
+
+## Usage
+1. Open the Dermiscope app on your mobile device.
+2. Create an account or login if you already have one.
+3. Upload the image of your skin that you want to analyze.
+4. Wait a few moments for the analysis to complete.
+5. View the analysis results and follow the treatment recommendations.
+
+## Project Architecture
+```bash
+dermiscope/
+├── backend/
+│   ├── app/
+│   ├── models/
+│   ├── routes/
+│   └── tests/
+├── frontend/
+│   ├── src/
+│   ├── assets/
+│   ├── components/
+│   └── screens/
+└── docs/
+```
+
+## Contribution
+
+## License
+
+## Contact
+
+## FAQ
