@@ -75,6 +75,17 @@ dermiscope-backend/
 
 ## License
 
+
 ## Contact
 
+
 ## FAQ
+### List of frequently asked questions:
+
+1. How does Dermiscope work?
+
+   Dermiscope uses machine learning technology to analyze skin images and detect the type of acne that is present.
+
+2. Is Dermiscope free?
+
+   Dermiscope offers a free version with basic features and a premium version with additional features.
