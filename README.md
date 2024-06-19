@@ -34,7 +34,8 @@ Once the identification is done, Dermiscope not only provides a diagnosis but al
 - Libraries and frameworks used: TensorFlow, Express JS and others
 
 ### Instruksi Instalasi
-1. Clone repository Dermiscope dari GitHub:
+1. Open a terminal or command prompt on your computer.
+2. Navigate to the directory where you want to clone the project.
+3. Run the following command to clone the project git
    ```bash
-   git clone https://github.com/username/dermiscope.git
-2. 
+   git clone https://github.com/dermiscope.git
