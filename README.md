@@ -56,11 +56,6 @@ dermiscope/
 │   ├── models/
 │   ├── routes/
 │   └── tests/
-├── frontend/
-│   ├── src/
-│   ├── assets/
-│   ├── components/
-│   └── screens/
 └── docs/
 ```
 ![image](https://github.com/Dermiscope/dermiscope-backend/assets/135413797/2563efda-791e-4eb0-bdfc-31ba63e4cd6e)
