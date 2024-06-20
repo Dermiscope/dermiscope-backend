@@ -1,5 +1,6 @@
 # DERMISCOPE
-![image](https://github.com/Dermiscope/dermiscope-backend/assets/135413797/2b19adc7-9d4d-411a-a6ed-b26d38472ab8)
+![image](https://github.com/Dermiscope/dermiscope-backend/assets/135413797/2b19adc7-9d4d-411a-a6ed-b26d38472ab8)![image](https://github.com/Dermiscope/dermiscope-backend/assets/135413797/c64fed5d-a775-43af-9028-6026e9f16093)
+
 
 ## Description
 Dermiscope is an innovative app designed to help users identify the type of acne they are experiencing. Using advanced technology, Dermiscope is able to analyze the user's skin condition in detail. Users just need to take a picture of their skin, and the app will perform an analysis to determine the type of acne hormonal acne and inflammatory acne.
