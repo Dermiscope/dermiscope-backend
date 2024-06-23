@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.UUID,
       },
       id_user: {
-        type: Sequelize.UUID,
+        type: Sequelize.STRING,
       },
       type: {
         type: Sequelize.STRING,
