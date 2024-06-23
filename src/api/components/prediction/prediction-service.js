@@ -132,7 +132,7 @@ async function prediction(token, payload) {
     // Store To Database
     await PredictionRepository.store({
       id: ID,
-      id_user: user.dataValues.id,
+      id_user: user.dataValues.id_google,
       type: detectionResult.type,
       accuration: detectionResult.accuration,
       treatment: detectionResult.treatment,
