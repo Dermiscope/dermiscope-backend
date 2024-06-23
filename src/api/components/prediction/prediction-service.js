@@ -62,9 +62,9 @@ async function getOne(option) {
  * @param {string} id ID User
  * @returns
  */
-async function getAllByUser(id) {
+async function getAllByUser(id_user) {
   try {
-    return await PredictionRepository.getOne({ id_user: id });
+    return await PredictionRepository.getOne({ id_user });
   } catch (error) {
     throw error;
   }
