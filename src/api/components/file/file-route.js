@@ -24,7 +24,6 @@ module.exports = (app) => {
     AuthenticationVerify,
     Storage.array('files', 3),
     FileValidator.mergeFilesToBody,
-    celebrate(FileValidator.storeDetection),
     FileController.store
   );
 

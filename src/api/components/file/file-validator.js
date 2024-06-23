@@ -30,10 +30,10 @@ module.exports = {
   },
   storeDetection: {
     body: {
-      detectionId: Joi.string().required().label('ID detection'),
+      detectionId: Joi.string().optional().label('ID detection'),
       files: Joi.array()
-        .min(1)
-        .max(5)
+        .min(3)
+        .max(3)
         .items(
           Joi.object({
             originalname: Joi.string().required(),

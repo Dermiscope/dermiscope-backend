@@ -14,6 +14,7 @@ module.exports = {
   api: {
     prefix: '/v1',
   },
+  ml_base_url: process.env.ML_BASE_URL,
   database: {
     development: {
       username: process.env.DB_USERNAME_DEVELOPMENT,
