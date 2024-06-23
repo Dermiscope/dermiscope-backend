@@ -34,7 +34,7 @@ async function getOne(request, response, next) {
 async function getAllByUser(request, response, next) {
   try {
     const result = await PredictionService.getAllByUser({
-      id_user: request.params.id,
+      id_user: request.params.id_user,
     });
     return response.status(200).json({
       status: 'OK',

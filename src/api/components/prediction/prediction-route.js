@@ -13,7 +13,7 @@ module.exports = (app) => {
   route.get('/:id', AuthenticationVerify, PredictionController.getOne);
 
   route.get(
-    '/user/:id',
+    '/user/:id_user',
     AuthenticationVerify,
     PredictionController.getAllByUser
   );

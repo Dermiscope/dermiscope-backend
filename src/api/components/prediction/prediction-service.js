@@ -64,7 +64,7 @@ async function getOne(option) {
  */
 async function getAllByUser(id_user) {
   try {
-    return await PredictionRepository.getOne({ id_user });
+    return await PredictionRepository.getWhere(id_user);
   } catch (error) {
     throw error;
   }
